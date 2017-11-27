@@ -1,0 +1,78 @@
+<footer>
+  <nav class="footer-nav">
+    <div class="container nopadding footer-padding">
+      <div class="col-lg-12 col-md-12  col-xs-3 col-sm-12 nopadding footer-text">
+        <div class="logo col-lg-4 col-md-4 col-sm-4 col-xs-12">
+          <%= link_to image_tag( "jtj-footer-logo.svg", class: "footerlogo-img"),root_path %>
+        </div>
+        <div class="logo col-lg-8 col-md-8 col-sm-8 col-xs-12">
+          <ul>
+            <% menu_items().each do |entry| %>
+              <li class="footer-item">
+                <%= link_to entry.title, '/'+entry.url, class: active_class(entry.url) %>
+                <% if defined?(entry.submenu) %>
+                  <ul>
+                    <% entry.submenu.each do |submenus| %>
+                      <li class="text-sub">
+                        <%= link_to submenus.title, '/'+submenus.url, class: "" %>
+                      </li>
+                    <% end %>
+                  </ul>
+                <% end %>
+              </li>
+            <% end %>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </nav>
+  <div class="text-center copyright">
+    <p>@2007-2015 Watermark Resources|www.watermark.org</p>
+    <p>All Scripture quotations, unless otherwise indicated, are taken from The Holy Bible, English Standard Version.</p>
+    <p>Copyright @2001 by Crossway Bibles, a publishing ministry of Good News Publishers.Used by permission. </p>
+    <p>All rights reserved. The provided by the Crossway Bibles Web service. </p>
+  </div>
+  <div class="text-center site-content">
+    <i>Created by House of Sticks.LLC</i>
+  </div>
+</footer>
+<div class="signup-popup">
+  <div class="signin">
+    <div class="col-md-5 col-lg-5 col-xs-12 col-sm-6 sign">
+      <div class="col-lg-1 col-md-1 col-sm-1 col-xs-12">
+        <div class="missout-rem-close" data-parent=".signup-popup">
+          <%= image_tag( "close.png") %>
+        </div>
+      </div>
+      <div class="col-md-10 col-sm-offset-1 col-lg-9 col-xs-12 col-sm-11 nopadding form-margin">
+        <p class="jointojourney">Sign up to JOIN<span class="signup-content">THE</span>JOURNEY!</p>
+        <p class="next-stream-text">Signup to receive daily devotionals via email.</p>
+        <div id="mc_embed_signup">
+          <form action="https://jointhejourney.us3.list-manage.com/subscribe/post?u=33046137ab7ee361be609ae65&amp;id=4047e88e14" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+            <div id="mc_embed_signup_scroll">
+              <div>
+                <input type="text" name="FNAME" class="input-address form-control required" placeholder="First Name" id="mce-FNAME">
+              </div>
+              <div>
+                <input type="text" name="LNAME" class="input-address form-control required" placeholder="Last Name" id="mce-LNAME">
+              </div>
+              <div>
+                <input type="email" name="EMAIL" class="input-address form-control required email" placeholder="Email Address" id="mce-EMAIL">
+              </div>
+              <div id="mce-responses" class="clear">
+                <div class="response" id="mce-error-response" style="display:none"></div>
+                <div class="response" id="mce-success-response" style="display:none"></div>
+              </div>
+              <div style="position: absolute; left: -5000px;" aria-hidden="true">
+                <input type="text" name="b_33046137ab7ee361be609ae65_4047e88e14" tabindex="-1" value="">
+              </div>
+              <div class="clear">
+                <input type="submit" value="Click Here to Join the Journey" name="subscribe" id="mc-embedded-subscribe" class="button signup-popupbtn">
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

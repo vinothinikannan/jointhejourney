@@ -1,0 +1,230 @@
+@import "helpers/variables.scss";
+@import "helpers/mixins.scss";
+
+.ios-btn {
+  color: $white_color;
+  background-color: #d1754b;
+  margin-left: 20px;
+  width: 20%;
+  border-radius: 1px;
+  font-family: 'Lato-Semibold';
+  font-size: 24px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.ios-btn:hover, .ios-btn:focus {
+  color: $white_color !important;
+}
+
+.android-btn {
+  color: $white_color;
+  background-color: $background_color;
+  border-radius: 1px !important;
+  padding: 10px 65px 10px 65px;
+  font-family: 'Lato-Semibold';
+  font-size: 24px;
+}
+
+.btn:active, .btn.active {
+  box-shadow: none;
+}
+
+.follow-button {
+  color: $white_color;
+  background-color: black;
+  border-radius: 1px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.download-btn {
+  border-radius: 1px;
+  background-color: transparent;
+  border: 1px solid $background_color;
+  color: black;
+  padding: 15px 25px;
+  font-size: 25px;
+  margin-bottom: 50px;
+  margin-left: 50px;
+  margin-top: 50px;
+}
+
+.signup-button {
+  @include button_app;
+
+  @include font;
+}
+
+.invite-button {
+  @include button_app;
+}
+
+.contact-button {
+  border: 1px solid $background_color;
+  border-radius: 1px;
+  background-color: transparent;
+  padding-left: 65px;
+  padding-right: 65px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  color: black;
+  margin: 0 auto;
+  margin-top: 30px;
+  margin-bottom: 95px;
+
+  @include font;
+}
+
+.app-btn {
+  color: $white_color;
+  background-color: $background_color;
+  border-radius: 1px;
+  margin-bottom: 55px;
+  padding: 20px;
+
+  @include font;
+}
+
+.btn:hover, .btn.focus {
+  color: $white_color;
+  outline: 0 !important;
+}
+
+.contact-button:hover {
+  color: black !important;
+}
+
+.signup-button:hover, .signup-button:focus {
+  color: black !important;
+  outline: 0;
+}
+
+.site-header-button {
+  text-align: center;
+  width: 100%;
+  position: relative;
+  padding: 20px 0;
+  float: left;
+}
+
+.signup-popupbtn {
+  background-color: transparent !important;
+  font-family: 'Lato-Semibold' !important;
+  font-size: 20px !important;
+  border: 1px solid black !important;
+  padding: 10px !important;
+  margin-top: 21px !important;
+  color: black !important;
+  margin-bottom: 30px !important;
+  border-radius: 1px !important;
+  height: auto !important;
+
+  &:hover, &:focus {
+    outline: 0;
+  }
+}
+
+@media (max-width: $xs_max) {
+  .ios-btn {
+    width: 43%;
+    margin-bottom: 20px;
+  }
+
+  .download-btn {
+    margin-left: 0px;
+  }
+
+  .android-btn {
+    padding-left: 125px;
+    padding-right: 125px;
+  }
+
+  .signup-popupbtn {
+    width: 100% !important;
+    font-size: 23px !important;
+  }
+
+  .contact-button {
+    width: 100%;
+    margin-top: 45px;
+  }
+
+  .read-btn {
+    width: 92%;
+    color: #000000;
+    margin-bottom: 50px;
+    background-color: transparent;
+    border: 1px solid $background_color;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    font-size: 30px;
+    border-radius: 1px;
+    margin-top: 50px;
+    font-weight: bold;
+  }
+
+  .read-btn:focus, .read-btn:hover {
+    color: black;
+  }
+
+  .btn-readmore {
+    margin: 0 auto;
+    margin-top: 25px;
+    margin-bottom: 40px;
+  }
+}
+
+@media (max-width: $sm_max) and (min-width: $sm_min) {
+  .ios-btn {
+    width: 27%;
+  }
+
+  .android-btn {
+    float: right;
+    bottom: 53px;
+    right: 14%;
+    position: relative;
+  }
+}
+
+@media (-webkit-min-device-pixel-ratio: 2) and (max-device-height: $max_device) and (min-device-height: $min_device) {
+  .ios-btn {
+    width: 50%;
+  }
+
+  .download-btn {
+    padding: 15px 5px;
+    margin-left: 35px;
+  }
+
+  .signup-button {
+    width: 88%;
+    margin: 0 auto;
+    padding-left: 85px;
+    padding-right: 85px;
+  }
+
+  .signup-popupbtn {
+    font-size: 20px !important;
+  }
+}
+
+@media only screen and (min-width: $min_device) and (max-width: $xs_max) {
+  .ios-btn {
+    width: 30%;
+    margin-bottom: 20px;
+    margin-top: 0px;
+  }
+}
+
+@media screen and (max-width: $min_device) {
+  .ios-btn {
+    width: 100%;
+    margin-bottom: 10px;
+    margin-top: 20px;
+    margin-left: 0px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+}

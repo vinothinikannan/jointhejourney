@@ -1,0 +1,107 @@
+@import "helpers/variables.scss";
+@import "helpers/mixins.scss";
+
+.footer-padding {
+  overflow: hidden;
+}
+
+.footer-item {
+  float: left !important;
+  zoom: 1;
+  position: relative;
+  padding-top: 2px;
+  margin: 0px 92px 0px 0px;
+
+  a {
+    display: block;
+    color: #FFF;
+    font-size: 20px;
+    font-weight: 100;
+  }
+}
+
+.footer-item ul {
+  padding-left: 0px;
+}
+
+.footer-nav {
+  padding-top: 30px;
+  padding-bottom: 20px;
+  width: 100%;
+}
+
+.footer-nav ul {
+  list-style: none;
+}
+
+footer {
+  background: black;
+  float: left;
+  width: 100%;
+}
+
+.text-sub a {
+  padding-bottom: 0;
+  margin-bottom: 5px;
+  font-size: 18px !important;
+  color: rgba(128, 128, 128, 0.72) !important;
+  padding-top: 10px;
+  font-weight: bold !important;
+}
+
+.site-content {
+  padding-top: 50px;
+  padding-bottom: 100px;
+}
+
+@media (max-width: $xs_max) {
+  .footer-item a {
+    padding-left: 25px;
+  }
+
+  .footer-item {
+    padding-top: 30px;
+  }
+
+  .footerlogo-img {
+    width: 300px;
+    padding-left: 20px;
+  }
+
+  .footerlog-img {
+    width: 300px;
+  }
+
+  .text-sub a {
+    color: $white_color !important;
+    padding-top: 30px;
+  }
+
+  .site-content {
+    i {
+      font-size: 22px;
+    }
+  }
+}
+
+@media (max-width: $sm_max) and (min-width: $sm_min) {
+  .footer-item {
+    margin: 0px;
+  }
+
+  .footer-item a {
+    padding: 3px 10px;
+    font-size: 21px;
+  }
+}
+
+@media (max-width: $md_max) and (min-width: $md_min) {
+  .footer-item {
+    margin: 0px;
+  }
+
+  .footer-item a {
+    padding-left: 37px;
+    padding-right: 37px;
+  }
+}

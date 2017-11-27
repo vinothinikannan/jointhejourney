@@ -1,0 +1,66 @@
+<%
+  if defined?(hero_image().image.file)
+    heroimage= hero_image().image.file.url
+  end
+%>
+<header role="header" <% if heroimage %> style="background-image: url('<%= heroimage %>');" <% end %>>
+  <nav class="nav">
+    <div class="container nopadding">
+      <div class="col-md-12 col-xs-12 col-sm-12 col-lg-12 nopadding logo-space nav-border">
+        <div class="col-lg-3 col-md-3 col-sm-4 col-xs-6 logo">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+          <%= image_tag( "menuopen.svg", class: "menuopen") %>
+          <%= image_tag( "menuclose.svg",class: "menuclose",style: "display:none;" ) %>
+          </button>
+          <%= link_to image_tag( "logo.png", class: "logo-img img-responsive"),root_path %>
+        </div>
+        <div class="col-lg-9 col-md-9 col-sm-8 col-xs-12 menu-padding">
+          <ul class="nav-list itemchange">
+            <% menu_items().each do |entry| %>
+              <li class="nav-item <%=active_class('/'+entry.url) %>">
+                <%= link_to entry.title, '/'+entry.url %>
+                <% if defined?(entry.submenu) %>
+                  <ul class="nav-submenu">
+                    <% entry.submenu.each do |submenus| %>
+                      <li class="nav-submenu-item">
+                        <%= link_to submenus.title, '/'+submenus.url, class: "sub-menu" %>
+                      </li>
+                      <div class="nav-borderline hidden-xs"></div>
+                    <% end %>
+                  </ul>
+                <% end %>
+              </li>
+            <% end %>
+            <li>
+              <button class="btn border-menu signupmenu hidden-xs signup-menu">Signup</button>
+            </li>
+            <li class="nav-item signup-border visible-xs">
+              <a class= "signup-menu border-menu signupmenu">Signup</a>
+            </li>
+            <li class="nav-item visible-xs">
+              <a class= "search-menu border-menu" id="name">Search</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="container hidden-xs">
+      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+        <div class="box">
+          <input class="search" type="search" placeholder="Search" />
+          <div class="icon"></div>
+          <div class="hits"></div>
+        </div>
+      </div>
+    </div>
+    <div class="menuopen"></div>
+  </nav>
+  <div class="section-content ">
+    <div class="masthead-title">
+      <h1 class="center-content">LIKE WHAT YOU SEE?</h1>
+    </div>
+    <div class="site-header-button">
+      <a class="btn invite">Invite a Friend</a>
+    </div>
+  </div>
+</header>

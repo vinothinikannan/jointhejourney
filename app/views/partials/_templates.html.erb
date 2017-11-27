@@ -1,0 +1,4 @@
+<% sections.each do |section| %>
+  <%= render partial: "sections/#{section.layout.filename.underscore}",
+      locals: { section: section } %>
+<% end %>

@@ -1,0 +1,43 @@
+<div class="container section">
+  <div class="section-event-bg-img">
+    <div class="row margin-row">
+      <div class="container visible-xs">
+        <div class="col-md-12 col-lg-12 col-xs-12 col-sm-12 searching-padding" >
+          <form>
+            <input type="text" class="searching" id="autocomplete" placeholder="Search" style="display:none;">
+          </form>
+        </div>
+      </div>
+      <div class="hidden-xs float-scrollicon">
+      	<%= image_tag( "Bible_icon.svg", class: "float-icon signup-menu") %>
+      </div>
+      <div class="socialicons text-center">
+        <ul>
+          <li><a target="_blank" href=""><%= image_tag( "facebook.svg", class: "socialicon") %></a></li>
+          <li><a target="_blank" href=""><%= image_tag( "twitter.svg", class: "socialicon") %></a></li>
+          <li><a target="_blank" href=""><%= image_tag( "email.svg", class: "socialicon") %></a></li>
+        </ul>
+      </div>
+      <h2 class="about-heading"><%= section.title %></h2>
+      <div class="section-about-content">
+        <% defined?(section.content[0]) ? content=section.content : content="" %>
+        <%= markdown(content) %>
+      </div>
+      <button class="btn read-btn btn-readmore visible-xs"> Read More </button>
+      <div class="border-dash"></div>
+      <button class="btn signup-button hidden-xs"> Sign Up to Join The Journey </button>
+     <div class="socialicons text-center footer-socialcontent fb-content">
+    <ul>
+      <li><a target="_blank" href=""><%= image_tag( "facebook.svg", class: "socialicon") %></a></li>
+      <li><a target="_blank" href=""><%= image_tag( "twitter.svg", class: "socialicon") %></a></li>
+      <li><a target="_blank" href=""><%= image_tag( "email.svg", class: "socialicon") %></a></li>
+    </ul>
+    <i>
+      <a href="#" class="conditions">
+        <p class="terms">Terms & conditions</p>
+      </a>
+    </i>
+  </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,47 @@
+<div class="container section">
+  <div class="section-event-bg-img">
+    <div class="container visible-xs">
+      <div class="col-md-12 col-lg-12 col-xs-12 col-sm-12 searching-padding" >
+        <form>
+          <input type="text" class="searching" id="autocomplete" placeholder="Search" style="display:none;">
+        </form>
+      </div>
+    </div>
+    <div class="row margin-row">
+      <div class="hidden-xs float-scrollicon">
+        <%= image_tag( "orange_with_cirle.svg", class: "float-icon signup-menu") %>
+      </div>
+       <div class="socialicons text-center">
+        <ul>
+          <li><a target="_blank" href="https://www.facebook.com/jointhejourney/"><%= image_tag( "facebook.svg", class: "socialicon") %></a></li>
+          <li><a target="_blank" href="https://twitter.com/jointhejourney?lang=en"><%= image_tag( "twitter.svg", class: "socialicon") %></a></li>
+          <li><a target="_blank" href=""><%= image_tag( "email.svg", class: "socialicon") %></a></li>
+        </ul>
+      </div>
+      <h2 class="contact-title ">Calendar</h2>
+      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 calendar-padding">
+        <%  @calendar.items.reverse.each  do |item| %>
+					<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 cal-left">
+	          <a href="/calendar/<%= item.title %>">
+	            <div class="calendar-background-img">
+	              <h2 class="calendar-text"><%= item.title %></h2>
+	            </div>
+	          </a>
+        	</div>
+				<% end %>
+      </div>
+    </div>
+    <div class="border-dash"></div>
+    <button class="btn signup-button hidden-xs"> SIGN UP to Join the Journey </button>
+    <div class="text-center btn-center visible-xs">
+      <button class="btn read-btn">Sign Up</button>
+    </div>
+    <i>
+      <a href="#" class="conditions">
+        <p class="text-center terms">Terms & conditions</p>
+      </a>
+    </i>
+  </div>
+</div>
+
+

@@ -1,0 +1,7 @@
+<% if defined?(@page.sections) %>
+  <div class="page-sections">
+    <%= render partial: "partials/templates", 
+        locals: { sections: @page.sections }
+    %> 
+  </div>
+<% end %>

@@ -1,0 +1,70 @@
+<div class="container section">
+  <div class="section-event-bg-img">
+    <div class="container visible-xs">
+      <div class="col-md-12 col-lg-12 col-xs-12 col-sm-12 searching-padding" >
+        <form>
+          <input type="text" class="searching" id="autocomplete" placeholder="Search" style="display:none;">
+        </form>
+      </div>
+    </div>
+    <div class="hidden-xs float-scrollicon">
+        <%= image_tag( "orange_with_cirle.svg", class: "float-icon signup-menu") %>
+   	</div>
+    <div class="socialicons text-center">
+      <ul>
+        <li><a target="_blank" href="https://www.facebook.com/jointhejourney/"><%= image_tag( "facebook.svg", class: "socialicon") %></a></li>
+        <li><a target="_blank" href="https://twitter.com/jointhejourney?lang=en"><%= image_tag( "twitter.svg", class: "socialicon") %></a></li>
+        <li><a target="_blank" href=""><%= image_tag( "email.svg", class: "socialicon") %></a></li>
+      </ul>
+    </div>
+    <div class="row calender-padd cal-row">
+      <div class="col-md-offset-1 col-md-6 col-lg-6 col-xs-12 col-sm-6 no-padding">
+        <h2 class="faq-header"><%= @url %></h2>
+      </div>
+      <% if @months.present? %>
+        <div class="col-md-offset-1 col-md-10 col-lg-10 col-xs-12 col-sm-12 header">
+          <div class="accordion" id="accordion2">
+            <div class="accordion-group ">
+            	<% @months.each_with_index do |item,n|  %>
+  	            <div  class="accordion-heading accordion-groupcal <% if n%2 == 1 %> overlay-image <% end %>">
+                  <% n = Date::MONTHNAMES.index(item)  %>
+  	              <p class="accordion-toggle calendar-toogle" data-toggle="collapse" data-parent="#accordion2" data-month="<%= n  %>" data-target="#toggleDemo<%= n %>">
+  	                <%= item %>
+  	                <%= image_tag( "right.png", class: "accordion-icon calendar-icon" ,data: {"month" => n}) %>
+  	              </p>
+  	            </div>
+  	            <div id="toggleDemo<%= n %>" class="collapse collapse">
+  		            <div class="accordion-inner">
+  		              <div id="calendar<%= n %>" class="fc-calendar-container"></div>
+  		            </div>
+  	          	</div>
+            	<% end %>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    </div>
+    <div class="border-dash"></div>
+    <div>
+    	<button class="btn signup-button hidden-xs"> Invite a friend to jointhejourney.com</button>
+    </div>
+    <div  class=" text-center btn-center visible-xs">
+    	<button class="btn read-btn">Sign Up</button>
+    </div>
+    <div class="socialicons text-center">
+      <ul>
+        <li><a target="_blank" href="https://www.facebook.com/jointhejourney/"><%= image_tag( "facebook.svg", class: "socialicon") %></a></li>
+        <li><a target="_blank" href="https://twitter.com/jointhejourney?lang=en"><%= image_tag( "twitter.svg", class: "socialicon") %></a></li>
+        <li><a target="_blank" href=""><%= image_tag( "email.svg", class: "socialicon") %></a></li>
+      </ul>
+    </div>
+  </div>
+</div>
+<% if @data.present? %>
+  <script type="text/javascript">
+    var events = 
+      <%= @data.to_s.html_safe   %>
+    ,
+    t = new Date();
+  </script>
+<% end %>

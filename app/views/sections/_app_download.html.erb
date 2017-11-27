@@ -1,0 +1,29 @@
+<div class="container">
+	<h3 class="app-header"><%= section.title %></h3>
+	<div class="row app-content">
+		<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 download-center">
+			<% if defined?(section.action[0]) %>
+        <ul>
+          <% section.action.each do |buttons| %>
+            <% if defined?(buttons.image.file) %>
+              <li class="download-list">
+                <%= link_to image_tag( buttons.image.file.url, class:"app-icon"),buttons.action,target: :_blank %>
+              </li>
+            <% end %>
+          <% end %>
+        </ul>
+      <% end %>
+  		<% if defined?(section.action[0]) %>
+        <ul>
+          <% section.action.each do |buttons| %>
+            <% if !defined?(buttons.image.file) %>
+            	<li class="download-list">
+              	<%= link_to buttons.title, buttons.action, class: "btn ios-btn" ,target: :_blank %>
+            	</li>
+  	        <% end %>
+          <% end %>
+        </ul>
+      <% end %>
+    </div>
+	</div>
+</div>

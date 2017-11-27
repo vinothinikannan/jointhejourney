@@ -1,0 +1,46 @@
+<div class="container section">
+  <div class="section-event-bg-img">
+    <div class="container visible-xs">
+      <div class="col-md-12 col-lg-12 col-xs-12 col-sm-12 searching-padding" >
+        <form>
+          <input type="text" class="searching" id="autocomplete" placeholder="Search" style="display:none;">
+        </form>
+      </div>
+    </div>
+    <div class="row margin-row">
+      <div class="hidden-xs float-scrollicon">
+        <%= image_tag( "Bible_icon.svg", class: "float-icon signup-menu") %>
+      </div>
+      <div class="socialicons text-center">
+        <ul>
+          <li><a target="_blank" href=""><%= image_tag( "facebook.svg", class: "socialicon") %></a></li>
+          <li><a target="_blank" href=""><%= image_tag( "twitter.svg", class: "socialicon") %></a></li>
+          <li><a target="_blank" href=""><%= image_tag( "email.svg", class: "socialicon") %></a></li>
+        </ul>
+      </div>
+      <h2 class="contact-title"><%= section.title %></h2>
+      <form name="contactform" class="contactform" >
+        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 no-padding contact-padding">
+          <div class="form-group">
+            <label for="name">Name*</label><br>
+            <input type="text" name="name" class="form-input form-control"  required="">
+          </div>
+          <div class="form-group">
+            <label for="email">Email Address*</label><br>
+            <input type="email" name="email" class="form-input form-control" required="">
+          </div>
+          <div class="form-group">
+            <label for="comment">Your Comment</label><br>
+            <textarea  rows="4" cols="50" class="form-control"></textarea>
+          </div>
+          <input type="submit" value="Submit" class="contact-button">
+        </div>
+      </form>
+    </div>
+    <i>
+      <a href="#" class="conditions">
+        <p class="text-center terms">Terms & conditions</p>
+      </a>
+    </i>
+  </div>
+</div>

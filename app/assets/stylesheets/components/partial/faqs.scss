@@ -1,0 +1,155 @@
+@import "helpers/variables.scss";
+@import "helpers/mixins.scss";
+
+.faq ul li {
+  font-family: 'Lato-Semibold';
+  font-size: 24px;
+}
+
+.faq ol li {
+  font-family: 'Lato-Semibold';
+  font-size: 24px;
+}
+
+.faq strong {
+  font-family: 'Lato-Semibold';
+  font-size: 24px;
+}
+
+.faq a {
+  font-family: 'Lato-Semibold';
+  font-size: 24px;
+}
+
+.faq blockquote {
+  font-family: 'Lato-Semibold';
+  font-size: 24px;
+}
+
+.faq h1 {
+  font-family: 'Lato-Semibold';
+  font-size: 36px;
+}
+
+.faq h2 {
+  font-family: 'Lato-Semibold';
+  font-size: 24px;
+}
+
+.faq h3 {
+  font-family: 'Lato-Semibold';
+  font-size: 21px;
+}
+
+.faq h4 {
+  font-family: 'Lato-Semibold';
+  font-size: 18px;
+}
+
+.faq h5 {
+  font-family: 'Lato-Semibold';
+  font-size: 16px;
+}
+
+.faq h6 {
+  font-family: 'Lato-Semibold';
+  font-size: 14px;
+}
+
+.faq-dash {
+  height: 1px;
+  background-image: image-url("faq3.png");
+  background-repeat: repeat-x;
+  overflow: hidden;
+  background-size: 30px 28px;
+  background-repeat: space;
+}
+
+.faq-list {
+  padding-left: 10px;
+  padding-right: 10px;
+
+  li {
+    padding: 10px;
+  }
+}
+
+.faq {
+  font-size: 34px;
+  font-family: 'Lato-Bold';
+  margin-bottom: 0px;
+  padding-top: 25px;
+  padding-bottom: 25px;
+  padding-left: 20px;
+}
+
+.faq-inner {
+  padding: 20px;
+
+  @include p;
+
+  p {
+    font-weight: bold;
+  }
+
+  ul {
+    li {
+      padding-bottom: 20px;
+    }
+  }
+}
+
+.faq-body {
+  background-color: rgba(255, 255, 255, 0.59);
+  padding-left: 50px;
+  padding-right: 50px;
+}
+
+.faq-header {
+  font-family: 'Lato-Medium';
+  font-size: 44px;
+  margin-bottom: 25px;
+  margin-top: 0px;
+}
+
+.faq-accordion {
+  padding-bottom: 50px;
+  padding-top: 15px;
+}
+
+@media (max-width: $xs_max) {
+  .faq-header {
+    padding-left: 35px;
+  }
+
+  .faq-body {
+    padding-left: 0px;
+    padding-right: 0px;
+  }
+
+  .faq {
+    padding: 25px 15px 45px 15px;
+  }
+
+  .faq-accordion {
+    padding-left: 0px;
+    padding-right: 0px;
+  }
+
+  .faqs-heading {
+    padding-left: 0px !important;
+    padding-right: 0px !important;
+  }
+
+  .faq-inner {
+    padding-left: 40px;
+  }
+}
+
+@media (max-width: $md_max) and (min-width: $md_min) {
+  .accordion-icon {
+    float: right;
+    position: relative;
+    right: -10px;
+  }
+}

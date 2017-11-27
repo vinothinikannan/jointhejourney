@@ -1,0 +1,40 @@
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title><%= @title_tag %></title>
+    
+    <%= csrf_meta_tags %>
+    <%= stylesheet_link_tag 'application.css' %>
+    <%= stylesheet_link_tag 'styles.css' %>
+    <link href="//cdn-images.mailchimp.com/embedcode/classic-10_7.css" rel="stylesheet" type="text/css">
+  </head>
+  <body>
+
+    <%= render partial:'layouts/header' %>
+
+    <div class="main-content">
+      <%= yield %>
+    </div>
+
+    <%= render partial:'layouts/footer' %>
+
+    <%= javascript_include_tag "application.js" %>
+    <script type='text/javascript' src='//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js'></script>
+    <script src="https://cdn.jsdelivr.net/instantsearch.js/1/instantsearch.min.js"></script>
+    <script type='text/javascript'>
+      (function($) {
+        window.fnames = new Array();
+        window.ftypes = new Array();
+        fnames[0]='EMAIL';
+    	ftypes[0]='email';
+    	fnames[1]='FNAME';
+    	ftypes[1]='text';
+    	fnames[2]='LNAME';
+    	ftypes[2]='text';
+      }(jQuery));
+	  var $mcj = jQuery.noConflict(true);
+
+	</script>
+  </body>
+</html>

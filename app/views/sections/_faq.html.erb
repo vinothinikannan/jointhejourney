@@ -1,0 +1,52 @@
+<div class="container section">
+  <div class="section-event-bg-img">
+    <div class="row margin-row">
+      <div class="container visible-xs">
+        <div class="col-md-12 col-lg-12 col-xs-12 col-sm-12 searching-padding" >
+          <form>
+            <input type="text" class="searching" id="autocomplete" placeholder="Search" style="display:none;">
+          </form>
+        </div>
+      </div>
+      <div class="hidden-xs float-scrollicon">
+      	<%= image_tag( "Bible_icon.svg", class: "float-icon signup-menu") %>
+      </div>
+       <div class="socialicons text-center hidden-xs">
+        <ul>
+          <li><a target="_blank" href=""><%= image_tag( "facebook.svg", class: "socialicon") %></a></li>
+          <li><a target="_blank" href=""><%= image_tag( "twitter.svg", class: "socialicon") %></a></li>
+          <li><a target="_blank" href=""><%= image_tag( "email.svg", class: "socialicon") %></a></li>
+        </ul>
+      </div>
+			<% if defined?(section.faq[0]) %>
+				<div class="accordion faq-accordion" id="accordion2">
+					<% section.faq.each_with_index do |item,n| 
+						defined?(item.questions[0]) ? questions=item.questions : questions="" 
+						defined?(item.answers[0]) ? answers=item.answers : answers="" 
+					%>
+						<div class="accordion-group">
+							<div class="accordion-heading faqs-heading">
+								<p class="accordion-toggle faq" data-toggle="collapse" data-parent="#accordion2" href="#collapse<%= n %>">
+									<%= questions %>
+									<%= image_tag( "arrows.png" ,class:"accordion-icon") %>
+								</p>
+                <div class="faq-dash"></div>
+							</div>
+							<div id="collapse<%= n %>" class="accordion-body faq-body collapse">
+								<div class="faq-inner">
+									<%= markdown(answers) %>
+								</div>
+                 <div class="faq-dash"></div>
+							</div>
+						</div>
+					<% end %>
+				</div>
+			<% end %>
+      <i>
+        <a href="#" class="conditions">
+          <p class="text-center terms">Terms & conditions</p>
+        </a>
+      </i>
+    </div>
+  </div>
+</div>

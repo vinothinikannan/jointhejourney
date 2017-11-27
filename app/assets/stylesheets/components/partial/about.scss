@@ -1,0 +1,89 @@
+@import "helpers/variables.scss";
+@import "helpers/mixins.scss";
+
+.section-about-content span {
+  font-family: 'Lato-Semibold';
+}
+
+.section-about-content p {
+  font-size: 24px;
+  padding-left: 50px;
+  padding-right: 50px;
+  padding-bottom: 30px;
+  font-family: 'Lato-Light';
+  margin: 0;
+}
+
+.section-about-content ul li {
+  font-family: 'Lato-Semibold';
+  font-size: 24px;
+}
+
+.section-about-content ol li {
+  font-family: 'Lato-Semibold';
+  font-size: 24px;
+}
+
+.section-about-content strong {
+  font-family: 'Lato-Semibold';
+  font-size: 24px;
+}
+
+.section-about-content a {
+  font-family: 'Lato-Semibold';
+  font-size: 24px;
+}
+
+.section-about-content blockquote {
+  font-family: 'Lato-Semibold';
+  font-size: 24px;
+}
+
+.section-about-content h1 {
+  font-family: 'Lato-Semibold';
+  font-size: 36px;
+}
+
+.section-about-content h2 {
+  font-family: 'Lato-Semibold';
+  font-size: 24px;
+}
+
+.section-about-content h3 {
+  font-family: 'Lato-Semibold';
+  font-size: 21px;
+}
+
+.section-about-content h4 {
+  font-family: 'Lato-Semibold';
+  font-size: 18px;
+}
+
+.section-about-content h5 {
+  font-family: 'Lato-Semibold';
+  font-size: 16px;
+}
+
+.section-about-content h6 {
+  font-family: 'Lato-Semibold';
+  font-size: 14px;
+}
+
+.about-heading {
+  font-size: 44px;
+  padding: 20px 50px 20px 50px;
+  font-family: 'Lato-Semibold';
+  margin: 0;
+}
+
+@media (max-width: $xs_max) {
+  .section-about-content p {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+
+  .about-heading {
+    padding: 30px 15px 20px 15px;
+    margin: 0;
+  }
+}

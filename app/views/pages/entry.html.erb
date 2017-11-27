@@ -1,0 +1,201 @@
+<div class="container count">
+  <div id="first" class="carouseller">
+    <a href="javascript:void(0)">
+      <%= image_tag("left.svg", class: "carouseller-left scroll hidden-xs", :data => {"fetch" => "fetch_previous_week_entry","date" => "#{@journey_current_week_first['date']}"}) %>
+      <%= image_tag("left.svg", class: "carouseller-left scroll visible-xs", :data => {"fetch" => "fetch_yesterday_entry","id" => "#{@journey_latest_id}"}) %>
+    </a>
+    <div class="carouseller-wrap">
+      <div class="carouseller-list">
+        <% @journey_current_week.each do |entry| %>
+          <%  if Date.today.to_s ==  entry['date']
+                visible = '' 
+              else
+                visible = 'hidden-xs'
+              end
+              if entry['title'].nil?
+                title = ''
+              else
+                title = entry['title'].parameterize
+              end
+          %>
+          <div class="car-3 carouseller-border <%= visible %>">
+            <a href="/<%= entry['id']+'-'+title %>">
+              <h6 class="carouseller-content"><%= weekday(entry['date']) %></h6>
+              <h6 class="carouseller-time"><%= l  Date.parse(entry['date']), format: '%m.%d' %></h6>
+            </a>
+          </div>
+        <% end %>
+      </div>
+    </div>
+    <a href="javascript:void(0)">
+      <%= image_tag("right.svg", class: "carouseller-right scroll hidden-xs", :data => {"fetch" => "fetch_next_week_entry","date" => "#{@journey_current_week_last['date']}"}) %>
+      <%= image_tag("right.svg", class: "carouseller-right scroll visible-xs", :data => {"fetch" => "fetch_tomorrow_entry","id" => "#{@journey_latest_id}"}) %>
+    </a>
+  </div>
+</div>
+<div class="col-xs-12 visible-xs nopadding content-fixed">
+  <%= image_tag( "orange_with_cirle.svg", class: "jtj-icon signup-menu") %>
+</div>
+<div class="container bottom section-scroll ">
+  <div class="mobicon-color">
+    <div class="container visible-xs">
+      <div class="col-md-12 col-lg-12 col-xs-12 col-sm-12 searching-padding" >
+        <form>
+          <input type="text" class="searching" id="autocomplete" placeholder="Search" style="display:none;">
+        </form>
+      </div>
+    </div>
+    <div class="row margin-row">
+      <div class="hidden-xs float-scrollicon">
+        <%= image_tag( "orange_with_cirle.svg", class: "float-icon signup-menu") %>
+      </div>
+    
+      <div class="socialicons text-center section-event-bg-img">
+        <ul>
+          <li><a target="_blank" href="https://www.facebook.com/jointhejourney/"><%= image_tag( "facebook.svg", class: "socialicon") %></a></li>
+          <li><a target="_blank" href="https://twitter.com/jointhejourney?lang=en"><%= image_tag( "twitter.svg", class: "socialicon") %></a></li>
+          <li><a target="_blank" href=""><%= image_tag( "email.svg", class: "socialicon") %></a></li>
+        </ul>
+      </div>
+      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12  section-background-color">
+        <p class="highlighted-story-content hidden-xs">Wondering where you left off? Click here   <%= image_tag( "track-back-icon-02.svg", class: "track-icon") %></p>
+        <i>
+          <p class=""><%= @journey_latest_date%></p>
+        </i>
+        <i>
+          <h2><%= @journey_latest_title %></h2>
+        </i>
+        <h3><%= @journey_latest_scripture_verse.html_safe %></h3>
+        <i>
+          <p class="highlighted-story-comments"><span class="coments">13 Comments</span> | <span class="print">Listen</span> | <span class="print">Print</span></p>
+        </i>
+        <p class=""><%= @journey_latest_introduction.html_safe %></p>
+    
+        <div class="text-center hidden-md visible-xs">
+          <button class="btn read-btn">Read More</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div class=" section-background-color">
+    <h2>Key Verse<span> | <%= @journey_latest_key_verse_reference %></span></h2>
+    <i>
+      <p class=""><%= @journey_latest_key_verse.html_safe %></p>
+    </i>
+    <div class="return-to-top">
+      <i><%= image_tag( "chevron-arrow-up.png", class: "section-latest-top-icon hidden-xs") %></i>
+      <p class="top-icontext hidden-xs">Go to top</p>
+    </div>
+  </div>
+  <div class="section-background-color">
+    <h2 class="">Central Truth</h2>
+    <p class=""><%= @journey_latest_central_truth.html_safe %></p>
+  </div>
+  <div class=" section-background-color">
+    <h2 class="">Devotional <span> | Proverbs 1:20-23</span></h2>
+    <i>
+      <p class=""><%= @journey_latest_devotional.html_safe %></p>
+    </i>
+    <div class="text-center">
+      <button class="btn show-button">Show Less</button>
+      <i>
+        <p class="section-comments-text">See Comments</p>
+      </i>
+    </div>
+    
+  </div>
+  <div class="bottom  section-background-color">
+    <h2>Bio <span> | <%= @journey_latest_author_name %></span></h2>
+    <i>
+      <p class="bio-scott"><%= @journey_latest_author_twitter_handle %></p>
+    </i>
+    <div class="col-lg-3 col-md-3 col-xs-12 col-sm-12 text-center">
+      <div class="highlighted-story-media"></div>
+    </div>
+    <div class="col-lg-9 col-md-9 col-xs-12 col-sm-12">
+      <p class=""><%= @journey_latest_author_bio.html_safe %></p>
+    </div>
+    <div class="text-center">
+      <button class="btn bio-button hidden-xs">Sign Up to Join The Journey</button>
+    </div>
+    <div class="text-center  visible-xs">
+      <button class="btn bio-button ">Sign Up</button>
+    </div>
+    <div class="return-to-top">
+      <%= image_tag( "up-arrow.svg", class: "bio-latest-top-icon hidden-xs") %>
+      <p class="top-coloricon hidden-xs">Go to top</p>
+    </div>
+  </div>
+  
+  
+  <div id="myCarousel" class="carousel slide section-background-color" data-ride="carousel">
+    <h2 class="">Scripture Memory <span> | Romans 1:5-6</span></h2>
+    <!-- Indicators -->
+    <!-- Wrapper for slides -->
+    <div class="carousel-inner">
+      <div class="item active">
+        <div class="row">
+          <div class="col-lg-11 col-md-11 col-sm-12 col-xs-12">
+            <i>
+              <p class="content-slider">
+                <sup>5</sup> Through whom grace has been given to us, sending us out to make disciples to the faith among all nations, for his name: <sup>6</sup> Among whom you in the same way have been marked out to be disciples of Jesus Christ
+              </p>
+            </i>
+          </div>
+        </div>
+      </div>
+      <div class="item">
+        <div class="row">
+          <div class="col-lg-11 col-md-11 col-sm-12 col-xs-12">
+            <i>
+              <p class="content-slider">
+                <sup>5</sup> Through whom grace has been given to us, sending us out to make disciples to the faith among all nations, for his name: <sup>6</sup> Among whom you in the same way have been marked out to be disciples of Jesus Christ
+              </p>
+            </i>
+          </div>
+        </div>
+      </div>
+      <div class="item">
+        <div class="row">
+          <div class="col-lg-11 col-md-11 col-sm-12 col-xs-12">
+            <i>
+              <p class="content-slider">
+                <sup>5</sup> Through whom grace has been given to us, sending us out to make disciples to the faith among all nations, for his name: <sup>6</sup> Among whom you in the same way have been marked out to be disciples of Jesus Christ
+              </p>
+            </i>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Left and right controls -->
+    <a class="left carousel-control slider-control left-control" href="#myCarousel" data-slide="prev">
+    <%= image_tag( "left.svg", class: "slider-iconleft") %>
+    <span class="sr-only">Previous</span>
+    </a>
+    <a class="right carousel-control slider-control right-control" href="#myCarousel" data-slide="next">
+    <%= image_tag( "right.svg", class: "slider-iconright") %>
+    <span class="sr-only">Next</span>
+    </a>
+    <div class="text-center">
+      <button class="btn show-button hidden-xs">Download Lock Screen</button> 
+    </div>
+    <div class="text-center visible-xs">
+      <button class="btn show-button">Download Screen</button>
+    </div>
+  </div>
+  <div class="socialicons text-center footer-socialcontent fb-content">
+    <ul>
+      <li><a target="_blank" href="https://www.facebook.com/jointhejourney/"><%= image_tag( "facebook.svg", class: "socialicon") %></a></li>
+      <li><a target="_blank" href="https://twitter.com/jointhejourney?lang=en"><%= image_tag( "twitter.svg", class: "socialicon") %></a></li>
+      <li><a target="_blank" href=""><%= image_tag( "email.svg", class: "socialicon") %></a></li>
+    </ul>
+  </div>
+</div>
+<% if defined?(@page.sections) %>
+  <div class="page-sections">
+    <%= render partial: "partials/templates", 
+        locals: { sections: @page.sections }
+    %> 
+  </div>
+<% end %>

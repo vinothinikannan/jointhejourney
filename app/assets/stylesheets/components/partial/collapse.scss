@@ -1,0 +1,76 @@
+@import "helpers/variables.scss";
+@import "helpers/mixins.scss";
+
+.accordion-icons {
+  float: right;
+}
+
+.accordion-icon {
+  float: right;
+  margin-top: 10px;
+  width: 25px;
+}
+
+.accordion {
+  padding-top: 50px;
+  padding-top: 0px;
+}
+
+.accordion-inner {
+  background-color: #171010;
+  padding: 50px;
+  font-size: 24px;
+}
+
+.content-rotate {
+  transform: rotate(180deg);
+}
+
+.accordion-groupcal {
+  padding: 0px;
+}
+
+.accordion-heading {
+  font-size: 20px;
+}
+
+.faqs-heading {
+  padding-left: 50px !important;
+  padding-right: 50px !important;
+}
+
+.header {
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), image-url("nathan-shipps-183808.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: #fff;
+  padding-left: 0px !important;
+  padding-right: 0px !important;
+}
+
+.overlay-image {
+  background-color: rgba(233, 231, 244, 0.5);
+}
+
+@media (max-width: $xs_max) {
+  .accordion-inner {
+    padding: 0;
+    background-color: $white_color;
+  }
+
+  .accordion-icon {
+    left: 0;
+  }
+}
+
+@media (max-width: $sm_max) and (min-width: $sm_min) {
+  .accordion-inner {
+    padding-bottom: 50px;
+  }
+}
+
+@media (max-width: $md_max) and (min-width: $md_min) {
+  .accordion-icon {
+    float: right;
+  }
+}

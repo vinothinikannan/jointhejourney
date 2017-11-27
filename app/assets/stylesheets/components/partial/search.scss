@@ -1,0 +1,98 @@
+@import "helpers/mixins.scss";
+@import "helpers/variables.scss";
+
+div.hits,div.hits1 {
+  background: #000;
+  color: #fff;
+  position: absolute;
+  right: 0;
+  margin-top: 35px;
+  z-index: 99;
+  height: 200px;
+  overflow-y: scroll;
+  max-width: 55%;
+}
+
+div.hits::-webkit-scrollbar,div.hits1::-webkit-scrollbar {
+  /* This is the magic bit */
+  display: none;
+}
+
+.ais-hits--item {
+  padding: 10px;
+}
+
+.search-ais {
+  overflow: hidden;
+  height: 25px;
+  padding-left: 0;
+  padding-right: 0;
+  text-align: center;
+}
+
+.ais-hits-search {
+  color: $white_color;
+  padding: 10px 10px 10px 5px;
+  border-bottom: 1px solid gray;
+}
+
+.box {
+  margin-top: 30px;
+  height: 50px;
+}
+
+.search {
+  width: 60%;
+  outline: 0 !important;
+  padding: 10px;
+  float: left;
+  display: none;
+  position: relative;
+  left: 37px;
+  background: transparent;
+  float: right;
+  margin-top: -15px;
+  border-radius: 40px;
+  border: 1px solid $white_color;
+  color: $white_color;
+  font-size: 20px;
+}
+
+.icon {
+  width: 20px;
+  height: 20px;
+  background-image: image-url("search.svg");
+  position: absolute;
+  right: 0;
+  background-position: center;
+  background-size: cover;
+}
+
+@media (max-width: $xs_max) {
+  .searching {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-left: 50px;
+    padding-right: 50px;
+    margin-bottom: 40px;
+    text-align: center;
+    border-radius: 50px 50px 50px 50px;
+    font-size: 20px;
+    background-position: calc(100% - 20px) calc(100% - 20px);
+    width: 100%;
+    background-size: 30px;
+    background-image: image-url("search-icon.png");
+    display: block;
+    float: left;
+    border: 1px solid gray;
+    background-repeat: no-repeat;
+    background-color: transparent;
+    margin-top: 30px;
+  }
+}
+
+@media (-webkit-min-device-pixel-ratio: 2) and (max-device-height: $max_device) and (min-device-height: $min_device) {
+  .searching {
+    background-position: 170px 16px;
+  }
+}

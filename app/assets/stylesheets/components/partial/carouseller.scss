@@ -1,0 +1,329 @@
+@import "helpers/variables.scss";
+@import "helpers/mixins.scss";
+
+.carouseller:before, .carouseller:after {
+  content: " ";
+  display: table;
+}
+
+.carouseller:after {
+  clear: both;
+}
+
+.carouseller {
+  position: relative;
+}
+
+.carouseller [class*="car-"] {
+  display: inline-block;
+  position: relative;
+  margin-left: 0.2564102564102564% !important;
+  *margin-left: 0.25109110747408616% !important;
+  float: left;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.carouseller-border:last-child {
+  border-right: 1px solid $white_color;
+}
+
+.carouseller [class*="car-"]:first-child {
+  margin-left: 0 !important;
+}
+
+.carouseller [class*="car-"]:nth-child(n+7) {
+  display: none;
+}
+
+.carouseller .car-by5 {
+  width: 1.93789743589745%;
+}
+
+.carouseller .car-12 {
+  width: 10%;
+}
+
+.carouseller .car-6 {
+  width: 4.8837948717948715%;
+}
+
+.carouseller .car-4 {
+  width: 3.1703931623931625%;
+}
+
+.carouseller .car-3 {
+  width: 1.8136923076923077%;
+  margin-top: 12px !important;
+  margin-bottom: 12px !important;
+  margin-left: 0 !important;
+  height: 140px;
+}
+
+.carouseller .car-2 {
+  width: 1.452991452991453%;
+}
+
+.carouseller .car-1 {
+  width: 0.5982905982905983%;
+}
+
+.carouseller .carouseller-list {
+  position: relative;
+  width: 997.4358974358974%;
+  margin-left: 45px;
+  margin-right: 45px;
+}
+
+.carouseller .carouseller-wrap {
+  overflow: hidden;
+  position: relative;
+  margin: 5px 110px 0 110px;
+}
+
+.carouseller .carouseller-left {
+  position: absolute;
+  margin: 0;
+  bottom: 25px;
+  background: none repeat scroll 0 0 transparent;
+  font-size: 80px;
+  opacity: 1 !important;
+  text-align: center;
+  color: red;
+  text-decoration: none;
+  padding-left: 50px;
+}
+
+.carouseller .carouseller-right {
+  position: absolute;
+  margin: 0;
+  bottom: 25px;
+  background: none repeat scroll 0 0 transparent;
+  font-size: 80px;
+  opacity: 1 !important;
+  text-align: center;
+  color: red;
+  text-decoration: none;
+  padding-right: 30px;
+}
+
+.carouseller .carouseller-left {
+  top: 54px !important;
+}
+
+.carouseller .carouseller-right {
+  right: 34px !important;
+  width: 52px !important;
+  top: 54px !important;
+}
+
+.carouseller .carouseller-left:hover, .carouseller .carouseller-:hover {
+  opacity: 0.8;
+}
+
+.carouseller-border {
+  border-left: 1px solid white;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+.carouseller-borderright {
+  border-right: 1px solid white;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+.carouseller {
+  margin-bottom: 0px !important;
+  background-color: black;
+  margin-top: -85px !important;
+  height: 170px !important;
+}
+
+.carouseller .carouseller-left, .carouseller .carouseller-right {
+  position: absolute;
+  margin: 0;
+  bottom: 80px !important;
+  font-size: 60px !important;
+  opacity: 0.5;
+  text-align: center;
+  text-decoration: none;
+  height: 58px;
+  color: #d1754b !important;
+}
+
+.carouseller-content {
+  font-size: 24px;
+  font-family: 'Lato-Semibold';
+  padding-top: 25px;
+  color: white;
+}
+
+.carouseller-time {
+  font-size: 24px;
+  font-family: 'Lato-Light';
+  color: white;
+}
+
+/*------Responsive-----------*/
+/* Portrait tablet to landscape and desktop */
+@media (min-width: $sm_min) and (max-width: $max_width) {
+  .carouseller .car-by5,
+  .carouseller .car-12,
+  .carouseller .car-6,
+  .carouseller .car-4,
+  .carouseller .car-3,
+  .carouseller .car-2,
+  .carouseller .car-1 {
+    width: 1.7623931623931625%;
+  }
+}
+
+/* Landscape phone to portrait tablet */
+@media (max-width: $xs_max) {
+  .carouseller .car-by5,
+  .carouseller .car-12,
+  .carouseller .car-6,
+  .carouseller .car-4,
+  .carouseller .car-3,
+  .carouseller .car-2,
+  .carouseller .car-1 {
+    width: 6.9717948717948715% !important;
+  }
+
+  .carouseller-border {
+    border-left: 1px solid transparent;
+  }
+
+  .carouseller [class*="car-"]:first-child {
+    margin-left: -24px !important;
+  }
+
+  .carouseller {
+    margin-top: -150px;
+  }
+
+  .count {
+    padding-left: 0px !important;
+    padding-right: 0px !important;
+  }
+
+  .carouseller-time {
+    font-size: 21px;
+  }
+
+  .carouseller .carouseller-left {
+    padding-left: 15px;
+  }
+
+  .carouseller .carouseller-right {
+    padding-right: 0px !important;
+  }
+
+  .mobiscroll {
+    color: black;
+  }
+
+  .carouseller .carouseller-right {
+    right: 34px !important;
+    width: 23px !important;
+    top: 54px !important;
+  }
+
+  .carouseller .carouseller-wrap {
+    margin: 5px 125px 0 125px;
+  }
+}
+
+/* Landscape phones and down */
+@media (max-width: $min_device) {
+  .carouseller .car-by5,
+  .carouseller .car-12,
+  .carouseller .car-6,
+  .carouseller .car-4,
+  .carouseller .car-3,
+  .carouseller .car-2,
+  .carouseller .car-1 {
+    width: 10%;
+  }
+}
+
+/* This can be deleted */
+[class*="car-"] {
+  text-align: center;
+  font-size: 30px;
+  font-weight: bold;
+  color: white !important;
+}
+
+h1 {
+  font-size: 40px;
+  margin-bottom: 30px;
+}
+
+.carouseller {
+  margin-bottom: 20px;
+  background-color: black;
+}
+
+@media (max-width: $sm_max) and (min-width: $sm_min) {
+  .carouseller .carouseller-wrap {
+    margin-left: 55px;
+    margin-right: 75px;
+  }
+
+  .carouseller .carouseller-list {
+    margin-left: 30px;
+    margin-right: 30px;
+  }
+
+  .carouseller .car-3 {
+    width: 1.832393%;
+  }
+
+  .carouseller .carouseller-right {
+    right: 2px !important;
+  }
+
+  .carouseller .carouseller-left {
+    left: 0px !important;
+    padding-left: 10px;
+  }
+}
+
+@media (-webkit-min-device-pixel-ratio: 2) and (max-device-height: $max_device) and (min-device-height: $min_device) {
+  .carouseller .carouseller-right {
+    paddding-right: 0px !important;
+  }
+
+  .carouseller .carouseller-wrap {
+    margin: 25px 69px 0 80px;
+  }
+
+  .carouseller .car-3 {
+    margin-top: 0px !important;
+  }
+}
+
+@media only screen and (min-width: $min_device) and (max-width: $xs_max) {
+  .carouseller .car-3 {
+    width: 8.9717948717948715% !important;
+  }
+}
+
+@media (max-width: $md_max) and (min-width: $md_min) {
+  .carouseller .carouseller-left {
+    padding-left: 35px;
+  }
+
+  .carouseller .carouseller-wrap {
+    margin: 5px 110px 0 80px;
+  }
+}
+
+@media (max-width: $xs_max) {
+  .carouseller .car-3 {
+    width: 1.9717948717948715% !important;
+  }
+}
